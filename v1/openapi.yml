@@ -62,7 +62,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: types/uri/api/types/get-res.json
+                $ref: types/uri/types/get-res.json
           links:
             address:
               operationId: getApiTypeById
@@ -245,6 +245,20 @@ paths:
           $ref: '#/components/responses/500'
 
   /devices/{device-id}:
+    get:
+      operationId: getDevice
+      summary: Device Details
+      responses:
+        200:
+          description: Success Response
+        401:
+          $ref: '#/components/responses/401'
+        404:
+          $ref: '#/components/responses/404'
+        429:
+          $ref: '#/components/responses/429'
+        500:
+          $ref: '#/components/responses/500'
     delete:
       operationId: deleteDevice
       summary: Remove Trusted Device

@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "device-get-response",
+  "title": "Device Details",
+  "type": "object",
+  "properties": {
+    "identifier": {
+      "title": "Device Identifier",
+      "description": "Unique identifier for a user device.",
+      "type": "string",
+      "minLength": 16,
+      "maxLength": 64
+    },
+    "nickname": {
+      "title": "Device Nickname",
+      "description": "User defined nickname for the device",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 64
+    },
+    "since": {
+      "title": "Trusted Since",
+      "description": "Timestamp for when this device was marked as trusted",
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastLogin": {
+      "title": "Last Login",
+      "description": "Timestamp for the last time this device logged in",
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "identifier",
+    "since"
+  ],
+  "additionalProperties": false
+}
