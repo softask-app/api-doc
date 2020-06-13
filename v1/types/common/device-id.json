@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "device-id",
+  "title": "Device Identifier",
+  "description": "Unique identifier for a user device.",
+  "type": "string",
+  "minLength": 16,
+  "maxLength": 64,
+  "pattern": "^[^\\s]+$"
+}

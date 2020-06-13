@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "device-trust-response",
+  "title": "Device Trust Response",
+  "description": "Success response body for a request to mark a device as trusted.",
+  "type": "object",
+  "properties": {
+    "token": {
+      "title": "Device Auth Token",
+      "description": "A 64 digit token that may be used by the device it was issued to to login without requiring the app user to enter their credentials.",
+      "type": "string",
+      "minLength": 64,
+      "maxLength": 64,
+      "pattern": "^[^\\s]+$"
+    }
+  },
+  "required": [
+    "token"
+  ],
+  "examples": [
+    {
+      "token": "622ccc023864431ba81daa2899bff74d66cdae79b8d74c06941f3b3951ef2c81"
+    }
+  ],
+  "additionalProperties": false
+}
