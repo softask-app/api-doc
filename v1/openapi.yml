@@ -198,7 +198,7 @@ paths:
   /devices:
     get:
       operationId: getDeviceList
-      summary: List Trusted Devices
+      summary: List Used Devices
       tags:
         - Devices
       security:
@@ -210,39 +210,6 @@ paths:
             application/json:
               schema:
                 $ref: types/uri/devices/get-res.json
-        401:
-          $ref: '#/components/responses/401'
-        429:
-          $ref: '#/components/responses/429'
-        500:
-          $ref: '#/components/responses/500'
-    post:
-      operationId: addDevice
-      summary: Add Trusted Device
-      description: |
-        Mark the device described by the given payload as "trusted".
-
-        On success this endpoint will return, in it's response body, a 64 digit
-        token that will be associated with the user and device hardware id.
-
-        Future logins can utilize this token in combination with the user id
-        and device hardware ID to auto-auth and create a session using the
-        `/auth/auto` endpoint.  This allows devices to authenticate behind the
-        scenes for a user without having to store the user's credentials.
-      tags:
-        - Authentication
-        - Devices
-      security:
-        - ApiKeyAuth: []
-      responses:
-        200:
-          description: Success Response
-          content:
-            application/json:
-              schema:
-                $ref: types/uri/auth/auto/post-res.json
-        400:
-          $ref: '#/components/responses/400'
         401:
           $ref: '#/components/responses/401'
         429:
@@ -273,9 +240,53 @@ paths:
           $ref: '#/components/responses/429'
         500:
           $ref: '#/components/responses/500'
+    patch:
+      operationId: updateDevice
+      summary: Update Device Info
+      # TODO: detail the device trust somewhere else... maybe even make that a
+      #       separate endpoint?
+      description: |
+        Update user provided data for a device.  This includes adding a device
+        nickname, marking a device as trusted, or removing trust from a
+        previously trusted device.
+
+        If the device was marked as updated in the request, on success this
+        endpoint will return, in it's response body, a 64 digit token that will
+        be associated with the user and device hardware id.
+
+        Future logins can utilize this token in combination with the user id
+        and device hardware ID to auto-auth and create a session using the
+        `/auth/auto` endpoint.  This allows devices to authenticate behind the
+        scenes for a user without having to store the user's credentials.
+      tags:
+        - Authentication
+        - Devices
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        description: JSON Patch Body
+        content:
+          application/json:
+            schema:
+              $ref: 'http://json.schemastore.org/json-patch#'
+      responses:
+        200:
+          description: Success Response
+          content:
+            application/json:
+              schema:
+                $ref: types/uri/auth/auto/post-res.json
+        400:
+          $ref: '#/components/responses/400'
+        401:
+          $ref: '#/components/responses/401'
+        429:
+          $ref: '#/components/responses/429'
+        500:
+          $ref: '#/components/responses/500'
     delete:
       operationId: deleteDevice
-      summary: Remove Trusted Device
+      summary: Remove Device Record
       description: |
         Remove a device's trust token from the service.
 
@@ -338,13 +349,19 @@ paths:
           $ref: '#/components/responses/429'
         500:
           $ref: '#/components/responses/500'
-    put:
+    patch:
       operationId: updateTask
       summary: Update Task
       tags:
         - Task Management
       security:
         - ApiKeyAuth: []
+      requestBody:
+        description: JSON Patch Body
+        content:
+          application/json:
+            schema:
+              $ref: 'http://json.schemastore.org/json-patch#'
       responses:
         204:
           $ref: '#/components/responses/204'
@@ -450,13 +467,19 @@ paths:
           $ref: '#/components/responses/429'
         500:
           $ref: '#/components/responses/500'
-    put:
+    patch:
       operationId: updateStep
       summary: Update Step
       tags:
         - Step Management
       security:
         - ApiKeyAuth: []
+      requestBody:
+        description: JSON Patch Body
+        content:
+          application/json:
+            schema:
+              $ref: 'http://json.schemastore.org/json-patch#'
       responses:
         204:
           $ref: '#/components/responses/204'
@@ -533,13 +556,19 @@ paths:
           $ref: '#/components/responses/404'
         500:
           $ref: '#/components/responses/500'
-    put:
+    patch:
       operationId: updateUser
       summary: Update User
       tags:
         - User Management
       security:
         - ApiKeyAuth: []
+      requestBody:
+        description: JSON Patch Body
+        content:
+          application/json:
+            schema:
+              $ref: 'http://json.schemastore.org/json-patch#'
       responses:
         204:
           $ref: '#/components/responses/204'
