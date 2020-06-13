@@ -31,11 +31,11 @@ tags:
 paths:
   /:
     get:
-      description: Renders this API doc.
       operationId: getApiDocs
+      description: Renders this API doc.
+      summary: API Docs
       tags:
         - Documentation
-      summary: API Docs
       responses:
         200:
           description: Success response
@@ -51,13 +51,13 @@ paths:
   /types:
     get:
       operationId: getApiTypeList
-      tags:
-        - Documentation
       summary: JSON Schema Type List
       description: |
         Expose the JSON schema definitions for the types used by this API as an
         array of objects containing the type ID value as well as a link to the
         type definition in the API.
+      tags:
+        - Documentation
       responses:
         200:
           description: Success Response
