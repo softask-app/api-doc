@@ -494,6 +494,10 @@ paths:
       responses:
         200:
           description: Success Response
+          content:
+            application/json:
+              schema:
+                $ref: types/uri/users/by-id/get-res.json
         400:
           $ref: '#/components/responses/400'
         429:

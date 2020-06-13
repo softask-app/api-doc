@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "user-details",
+  "title": "User Details",
+  "type": "object",
+  "properties": {
+    "displayName": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 64
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "displayName",
+    "email",
+    "created"
+  ],
+  "additionalProperties": false
+}
