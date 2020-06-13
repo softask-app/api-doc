@@ -2,7 +2,7 @@ openapi: 3.0.3
 
 info:
   version: v1.0.0
-  title: SofTask
+  title: Softask
   license:
     name: MIT
   contact:
@@ -86,10 +86,10 @@ paths:
         allowEmptyValue: false
     get:
       operationId: getApiTypeById
-      tags:
-        - Documentation
       summary: JSON Schema Type
       description: Shows the JSON schema for the specified type by id.
+      tags:
+        - Documentation
       responses:
         200:
           description: Success Response
