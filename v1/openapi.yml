@@ -204,6 +204,10 @@ paths:
       responses:
         200:
           description: Success Response
+          content:
+            application/json:
+              schema:
+                $ref: types/uri/devices/get-res.json
         401:
           $ref: '#/components/responses/401'
         429:
@@ -258,7 +262,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: types/uri/devices/get-res.json
+                $ref: types/uri/devices/by-id/get-res.json
         401:
           $ref: '#/components/responses/401'
         404:
