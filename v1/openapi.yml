@@ -248,9 +248,17 @@ paths:
     get:
       operationId: getDevice
       summary: Device Details
+      tags:
+        - Devices
+      security:
+        - ApiKeyAuth: []
       responses:
         200:
           description: Success Response
+          content:
+            application/json:
+              schema:
+                $ref: types/uri/devices/get-res.json
         401:
           $ref: '#/components/responses/401'
         404:
