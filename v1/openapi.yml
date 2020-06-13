@@ -530,8 +530,8 @@ paths:
       security:
         - ApiKeyAuth: []
       responses:
-        200:
-          description: Success Response
+        204:
+          $ref: '#/components/responses/204'
         400:
           $ref: '#/components/responses/400'
         401:
