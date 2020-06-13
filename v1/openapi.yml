@@ -491,6 +491,11 @@ paths:
       summary: Create User
       tags:
         - User Management
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: types/uri/users/post-req.json
       responses:
         200:
           description: Success Response
@@ -516,6 +521,10 @@ paths:
       responses:
         200:
           description: Success Response
+          content:
+            application/json:
+              schema:
+                $ref: types/uri/users/by-id/get-res.json
         401:
           $ref: '#/components/responses/401'
         404:
