@@ -22,7 +22,7 @@ post:
     A device that has made this call is expected to store that token locally
     for future use.
   tags:
-    - Devices
+    - Device Management
   responses:
     200:
       description: Success Response
@@ -52,7 +52,7 @@ delete:
     If the hardware id `{device-id}` is not known, is not attached to the
     logged in user, or is not trusted, this endpoint will return a 404.
   tags:
-    - Devices
+    - Device Management
   security:
     - ApiKeyAuth: []
   responses:

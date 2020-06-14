@@ -3,7 +3,7 @@ get:
   operationId: getDeviceList
   summary: List Used Devices
   tags:
-    - Devices
+    - Device Management
   security:
     - ApiKeyAuth: []
   responses:

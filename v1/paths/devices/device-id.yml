@@ -9,7 +9,7 @@ get:
   operationId: getDevice
   summary: Device Details
   tags:
-    - Devices
+    - Device Management
   security:
     - ApiKeyAuth: []
   responses:
@@ -39,7 +39,7 @@ patch:
 
     * `nickname`
   tags:
-    - Devices
+    - Device Management
   security:
     - ApiKeyAuth: []
   requestBody:
@@ -72,7 +72,7 @@ delete:
     This will also remove the associated trust record for the device if one
     exists.
   tags:
-    - Devices
+    - Device Management
   security:
     - ApiKeyAuth: []
   responses:

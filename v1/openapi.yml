@@ -20,13 +20,13 @@ tags:
     description: API authentication endpoints
   - name: Documentation
     description: API documentation endpoints
+  - name: Device Management
   - name: Task Management
     description: Task management endpoints
   - name: Step Management
     description: Task step management endpoints
   - name: User Management
     description: User account management endpoints
-  - name: Devices
 
 paths:
   /: { $ref: paths/(empty).yml }
