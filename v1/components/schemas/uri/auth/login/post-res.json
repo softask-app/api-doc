@@ -6,7 +6,7 @@
   "type": "object",
   "properties": {
     "apiKey": {
-      "$ref": "../../../common/api-key.json"
+      "$ref": "https://softask-app.github.io/api-types/v1/types/meta/api-key.json#"
     }
   },
   "required": [
