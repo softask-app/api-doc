@@ -593,6 +593,8 @@ paths:
           $ref: '#/components/responses/500'
 
   /users/{user-id}:
+    parameters:
+      - $ref: '#/components/parameters/user-id'
     get:
       operationId: getUser
       summary: User Details
@@ -656,7 +658,62 @@ paths:
         500:
           $ref: '#/components/responses/500'
 
+  /users/{user-id}/pfp:
+    parameters:
+      - $ref: '#/components/parameters/user-id'
+    get:
+      operationId: getUserPfp
+      summary: User Profile Pic
+      description: |
+        Get a user's profile image.
+
+        To get this image you must be logged in as the user who owns the profile
+        picture, or be on the list of support users approved by the user who
+        owns the profile picture.
+      tags:
+        - User Management
+      security:
+        - ApiKeyAuth: []
+      responses:
+        200:
+          description: Success Response
+          content:
+            image/jpeg:
+              schema:
+                type: string
+                format: binary
+            image/gif:
+              schema:
+                type: string
+                format: binary
+            image/png:
+              schema:
+                type: string
+                format: binary
+            image/svg+xml:
+              schema:
+                type: string
+                format: binary
+        401:
+          $ref: '#/components/responses/401'
+        404:
+          $ref: '#/components/responses/404'
+        429:
+          $ref: '#/components/responses/429'
+        500:
+          $ref: '#/components/responses/500'
+
 components:
+  parameters:
+    user-id:
+      name: user-id
+      in: path
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 9223372036854775807
+
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
