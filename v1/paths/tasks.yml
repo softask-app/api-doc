@@ -1,6 +1,38 @@
 # path: /tasks
-post:
+get:
   operationId: getTaskList
+  summary: Get Task List
+  description: |
+    Returns a list of tasks that were either created by and/or are assigned to
+    the current user.
+
+    The result list can optionally be filtered to only tasks that are assigned
+    to the current user or only tasks that were created by the current user.
+  tags:
+    - Task Management
+  security:
+    - ApiKeyAuth: []
+  parameters:
+    - name: filter
+      in: query
+      required: false
+      allowEmptyValue: false
+      schema:
+        type: string
+        enum:
+          - assigned
+          - created
+  responses:
+    200:
+      description: Success Response
+    401:
+      $ref: ../components/responses/401.yml
+    429:
+      $ref: ../components/responses/429.yml
+    500:
+      $ref: ../components/responses/500.yml
+post:
+  operationId: createTask
   summary: Create a Task
   tags:
     - Task Management

@@ -39,10 +39,8 @@ paths:
   /devices/{device-id}:       { $ref: paths/devices/device-id.yml       }
   /devices/{device-id}/trust: { $ref: paths/devices/device-id/trust.yml }
 
-  /tasks:           { $ref: paths/tasks.yml          }
-  /tasks/{task-id}: { $ref: paths/tasks/task-id.yml  }
-  /tasks/assigned:  { $ref: paths/tasks/assigned.yml }
-  /tasks/created:   { $ref: paths/tasks/created.yml  }
+  /tasks:           { $ref: paths/tasks.yml         }
+  /tasks/{task-id}: { $ref: paths/tasks/task-id.yml }
 
   /tasks/{task-id}/steps:           { $ref: paths/tasks/task-id/steps.yml        }
   /tasks/{task-id}/steps/{step-id}: { $ref: paths/tasks/task-id/steps/step-id.yml }
@@ -50,7 +48,6 @@ paths:
   /users:               { $ref: paths/users.yml }
   /users/{user-id}:     { $ref: paths/users/by-id.yml }
   /users/{user-id}/pfp: { $ref: paths/users/by-id/pfp.yml }
-  /users/{user-id}/tasks: { $ref: paths/users/by-id/tasks.yml }
 
   /tags: { $ref: paths/tags.yml }
 
