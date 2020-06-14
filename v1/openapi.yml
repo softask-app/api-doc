@@ -50,6 +50,7 @@ paths:
   /users:               { $ref: paths/users.yml }
   /users/{user-id}:     { $ref: paths/users/by-id.yml }
   /users/{user-id}/pfp: { $ref: paths/users/by-id/pfp.yml }
+  /users/{user-id}/tasks: { $ref: paths/users/by-id/tasks.yml }
 
   /tags: { $ref: paths/tags.yml }
 
