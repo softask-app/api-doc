@@ -1,0 +1,24 @@
+# path: /users
+post:
+  operationId: createUser
+  summary: Create User
+  tags:
+    - User Management
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/uri/users/post-req.json
+  responses:
+    200:
+      description: Success Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/uri/users/by-id/get-res.json
+    400:
+      $ref: ../components/responses/400.yml
+    429:
+      $ref: ../components/responses/429.yml
+    500:
+      $ref: ../components/responses/500.yml

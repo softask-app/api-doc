@@ -1,0 +1,84 @@
+# path: devices/device-id
+parameters:
+  - name: device-id
+    in: path
+    required: true
+    schema:
+      $ref: ../../components/schemas/common/device-id.json
+get:
+  operationId: getDevice
+  summary: Device Details
+  tags:
+    - Devices
+  security:
+    - ApiKeyAuth: []
+  responses:
+    200:
+      description: Success Response
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/uri/devices/by-id/get-res.json
+    401:
+      $ref: ../..//components/responses/401.yml
+    404:
+      $ref: ../..//components/responses/404.yml
+    429:
+      $ref: ../..//components/responses/429.yml
+    500:
+      $ref: ../..//components/responses/500.yml
+patch:
+  operationId: updateDevice
+  summary: Update Device Info
+  # TODO: detail the device trust somewhere else... maybe even make that a
+  #       separate endpoint?
+  description: |
+    Update user provided data for a device.
+
+    Fields that may be updated using this endpoint:
+
+    * `nickname`
+  tags:
+    - Devices
+  security:
+    - ApiKeyAuth: []
+  requestBody:
+    description: JSON Patch Body
+    content:
+      application/json:
+        schema:
+          $ref: 'http://json.schemastore.org/json-patch#'
+  responses:
+    200:
+      description: Success Response
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/uri/auth/auto/post-res.json
+    400:
+      $ref: ../..//components/responses/400.yml
+    401:
+      $ref: ../..//components/responses/401.yml
+    429:
+      $ref: ../..//components/responses/429.yml
+    500:
+      $ref: ../..//components/responses/500.yml
+delete:
+  operationId: deleteDevice
+  summary: Remove Device Record
+  description: |
+    Removes a device from the user's known devices list.
+
+    This will also remove the associated trust record for the device if one
+    exists.
+  tags:
+    - Devices
+  security:
+    - ApiKeyAuth: []
+  responses:
+    204:
+      $ref: ../..//components/responses/204.yml
+    404:
+      $ref: ../..//components/responses/404.yml
+    500:
+      $ref: ../..//components/responses/500.yml

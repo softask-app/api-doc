@@ -1,0 +1,61 @@
+# path: /tasks/{task-id}
+get:
+  operationId: getTask
+  summary: Task Details
+  tags:
+    - Task Management
+  security:
+    - ApiKeyAuth: []
+  responses:
+    200:
+      description: Success Response
+    401:
+      $ref: ../../components/responses/401.yml
+    404:
+      $ref: ../../components/responses/404.yml
+    429:
+      $ref: ../../components/responses/429.yml
+    500:
+      $ref: ../../components/responses/500.yml
+patch:
+  operationId: updateTask
+  summary: Update Task
+  tags:
+    - Task Management
+  security:
+    - ApiKeyAuth: []
+  requestBody:
+    description: JSON Patch Body
+    content:
+      application/json:
+        schema:
+          $ref: 'http://json.schemastore.org/json-patch#'
+  responses:
+    204:
+      $ref: ../../components/responses/204.yml
+    400:
+      $ref: ../../components/responses/400.yml
+    401:
+      $ref: ../../components/responses/401.yml
+    404:
+      $ref: ../../components/responses/404.yml
+    429:
+      $ref: ../../components/responses/429.yml
+    500:
+      $ref: ../../components/responses/500.yml
+delete:
+  operationId: deleteTask
+  summary: Delete Task
+  tags:
+    - Task Management
+  security:
+    - ApiKeyAuth: []
+  responses:
+    204:
+      $ref: ../../components/responses/204.yml
+    401:
+      $ref: ../../components/responses/401.yml
+    404:
+      $ref: ../../components/responses/404.yml
+    500:
+      $ref: ../../components/responses/500.yml

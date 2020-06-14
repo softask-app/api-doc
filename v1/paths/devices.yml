@@ -1,0 +1,21 @@
+# path: /devices
+get:
+  operationId: getDeviceList
+  summary: List Used Devices
+  tags:
+    - Devices
+  security:
+    - ApiKeyAuth: []
+  responses:
+    200:
+      description: Success Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/uri/devices/get-res.json
+    401:
+      $ref: ../components/responses/401.yml
+    429:
+      $ref: ../components/responses/429.yml
+    500:
+      $ref: ../components/responses/500.yml

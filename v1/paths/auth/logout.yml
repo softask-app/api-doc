@@ -1,0 +1,22 @@
+# path: auth/logout
+post:
+  operationId: logout
+  summary: Logout
+  description: |
+    Expires the user session.
+
+    Clients should also discontinue use of the X-Api-Key header as the value
+    is no longer valid.  Continued usage of an expired token will result in
+    401s from any endpoint requiring a logged in user (the same behavior as
+    if the X-Api-Key header was omitted).
+  tags:
+    - Authentication
+  security:
+    - ApiKeyAuth: []
+  responses:
+    204:
+      $ref: ../..//components/responses/204.yml
+    401:
+      $ref: ../..//components/responses/401.yml
+    500:
+      $ref: ../..//components/responses/500.yml

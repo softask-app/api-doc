@@ -1,0 +1,65 @@
+# path: /users/{user-id}
+parameters:
+  - $ref: ../../components/parameters/user-id.yml
+get:
+  operationId: getUser
+  summary: User Details
+  tags:
+    - User Management
+  security:
+    - ApiKeyAuth: []
+  responses:
+    200:
+      description: Success Response
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/uri/users/by-id/get-res.json
+    401:
+      $ref: ../../components/responses/401.yml
+    404:
+      $ref: ../../components/responses/404.yml
+    500:
+      $ref: ../../components/responses/500.yml
+patch:
+  operationId: updateUser
+  summary: Update User
+  tags:
+    - User Management
+  security:
+    - ApiKeyAuth: []
+  requestBody:
+    description: JSON Patch Body
+    content:
+      application/json:
+        schema:
+          $ref: 'http://json.schemastore.org/json-patch#'
+  responses:
+    204:
+      $ref: ../../components/responses/204.yml
+    400:
+      $ref: ../../components/responses/400.yml
+    401:
+      $ref: ../../components/responses/401.yml
+    404:
+      $ref: ../../components/responses/404.yml
+    429:
+      $ref: ../../components/responses/429.yml
+    500:
+      $ref: ../../components/responses/500.yml
+delete:
+  operationId: deleteUser
+  summary: Delete User Account
+  tags:
+    - User Management
+  security:
+    - ApiKeyAuth: []
+  responses:
+    204:
+      $ref: ../../components/responses/204.yml
+    401:
+      $ref: ../../components/responses/401.yml
+    404:
+      $ref: ../../components/responses/404.yml
+    500:
+      $ref: ../../components/responses/500.yml

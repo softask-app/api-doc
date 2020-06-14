@@ -1,0 +1,33 @@
+# path: auth/auto
+post:
+  operationId: autoAuth
+  summary: Trusted Device Auth
+  description: |
+    Create a user session for a trusted device.
+
+    On success this endpoint will return an API key token which can be used
+    as the value of the X-Api-Key header to access resources requiring
+    a logged in user.
+  tags:
+    - Authentication
+  requestBody:
+    description: Auth Request Payload
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/uri/auth/auto/post-req.json
+  responses:
+    200:
+      description: Success Response
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/uri/auth/auto/post-res.json
+    400:
+      $ref: ../../components/responses/400.yml
+    401:
+      $ref: ../../components/responses/401.yml
+    429:
+      $ref: ../../components/responses/429.yml
+    500:
+      $ref: ../../components/responses/500.yml

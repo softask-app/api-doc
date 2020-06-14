@@ -1,0 +1,19 @@
+# path: /tasks/{task-id}/steps
+get:
+  operationId: getStepList
+  summary: List Task Steps
+  tags:
+    - Step Management
+  security:
+    - ApiKeyAuth: []
+  responses:
+    200:
+      description: Success Response
+    401:
+      $ref: ../../../components/responses/401.yml
+    404:
+      $ref: ../../../components/responses/404.yml
+    429:
+      $ref: ../../../components/responses/429.yml
+    500:
+      $ref: ../../../components/responses/500.yml

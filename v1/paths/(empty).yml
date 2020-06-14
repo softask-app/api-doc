@@ -1,0 +1,18 @@
+# path: /
+get:
+  operationId: getApiDocs
+  description: Renders this API doc.
+  summary: API Docs
+  tags:
+    - Documentation
+  responses:
+    200:
+      description: Success response
+      content:
+        text/html:
+          schema:
+            type: string
+    429:
+      $ref: ../components/responses/429.yml
+    500:
+      $ref: ../components/responses/500.yml

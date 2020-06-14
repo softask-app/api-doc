@@ -1,0 +1,5 @@
+description: Rate Limited
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/errors/429.json

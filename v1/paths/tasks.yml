@@ -1,0 +1,19 @@
+# path: /tasks
+post:
+  operationId: getTaskList
+  summary: Create a Task
+  tags:
+    - Task Management
+  security:
+    - ApiKeyAuth: []
+  responses:
+    200:
+      description: Success Response
+    400:
+      $ref: ../components/responses/400.yml
+    401:
+      $ref: ../components/responses/401.yml
+    429:
+      $ref: ../components/responses/429.yml
+    500:
+      $ref: ../components/responses/500.yml

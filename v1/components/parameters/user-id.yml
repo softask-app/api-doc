@@ -1,0 +1,8 @@
+user-id:
+  name: user-id
+  in: path
+  required: true
+  schema:
+    type: integer
+    minimum: 1
+    maximum: 9223372036854775807
