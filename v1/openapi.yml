@@ -709,6 +709,39 @@ paths:
           $ref: '#/components/responses/429'
         500:
           $ref: '#/components/responses/500'
+    put:
+      operationId: setUserPfp
+      summary: Set User Profile Pic
+      description: |
+        Sets the user's profile pic to the uploaded file, replacing the previous
+        profile pic (if one existed).
+
+        Supported file types are:
+
+        * `gif`
+        * `jpg`
+        * `png`
+        * `svg`
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        204:
+          $ref: '#/components/responses/204'
+        401:
+          $ref: '#/components/responses/401'
+        404:
+          $ref: '#/components/responses/404'
+        429:
+          $ref: '#/components/responses/429'
+        500:
+          $ref: '#/components/responses/500'
 
 components:
   parameters:
