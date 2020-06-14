@@ -670,6 +670,13 @@ paths:
         To get this image you must be logged in as the user who owns the profile
         picture, or be on the list of support users approved by the user who
         owns the profile picture.
+
+        Supported file types are:
+
+        * `gif`
+        * `jpg`
+        * `png`
+        * `svg`
       tags:
         - User Management
       security:
