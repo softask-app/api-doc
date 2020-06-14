@@ -22,6 +22,43 @@ get:
 patch:
   operationId: updateTask
   summary: Update Task
+  description: |
+    Update user provided data for a task using a
+    [JSON Patch](http://jsonpatch.com/) request.
+
+    Fields that may be updated using this endpoint:
+
+    ## `/name`
+
+    * `"replace"`
+
+    The "name" property text can be updated (via "replace"), but cannot
+    otherwise be altered.  The updated value must conform to the type
+    specification for the "name" field as defined in
+    [the task JSON schema](https://softask-app.github.io/api-types/v1/types/task/full.json).
+
+    ## `/description`
+
+    * `"add"`
+    * `"remove"`
+    * `"replace"`
+
+    The "description" property can be added, removed, or replaced as desired.
+    Added or replaced values must conform to the type specification for the
+    "description" field as defined in
+    [the task JSON schema](https://softask-app.github.io/api-types/v1/types/task/full.json).
+
+    ## `/assignees/{n|-}`
+
+    * `"add"`
+    * `"remove"`
+
+    The "assignees" array may have elements added or removed from it, but must
+    not be otherwise altered.
+
+    Any entries added to the array must conform to the type specification for
+    short user detail blocks as defined in
+    [the user JSON schema](https://softask-app.github.io/api-types/v1/types/user/short.json).
   tags:
     - Task Management
   security:
