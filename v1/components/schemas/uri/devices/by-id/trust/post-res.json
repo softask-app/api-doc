@@ -6,12 +6,7 @@
   "type": "object",
   "properties": {
     "token": {
-      "title": "Device Auth Token",
-      "description": "A 64 digit token that may be used by the device it was issued to to login without requiring the app user to enter their credentials.",
-      "type": "string",
-      "minLength": 64,
-      "maxLength": 64,
-      "pattern": "^[^\\s]+$"
+      "$ref": "https://softask-app.github.io/api-types/v1/types/device/trust-token.json#",
     }
   },
   "required": [

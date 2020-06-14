@@ -11,11 +11,7 @@
       "format": "email"
     },
     "deviceId": {
-      "title": "Device Hardware ID",
-      "type": "string",
-      "minLength": 12,
-      "maxLength": 64,
-      "pattern": "^[^\\s]+$"
+      "$ref": "https://softask-app.github.io/api-types/v1/types/device/device-id.json#"
     },
     "token": {
       "title": "Auto-Auth Token",
