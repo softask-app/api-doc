@@ -1,4 +1,6 @@
 # path: /tasks/{task-id}
+parameters:
+  - $ref: ../../components/parameters/task-id.yml
 get:
   operationId: getTask
   summary: Task Details

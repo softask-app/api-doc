@@ -1,4 +1,6 @@
 # path: /tasks/{task-id}/steps/{step-id}
+parameters:
+  - $ref: ../../../../components/parameters/task-id.yml
 get:
   operationId: getStep
   summary: View Step Details
