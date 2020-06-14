@@ -8,6 +8,11 @@ get:
 
     The result list can optionally be filtered to only tasks that are assigned
     to the current user or only tasks that were created by the current user.
+  tags:
+    - User Management
+    - Task Management
+  security:
+    - ApiKeyAuth: []
   parameters:
     - name: filter
       in: query
