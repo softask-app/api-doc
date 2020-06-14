@@ -75,6 +75,8 @@ put:
             file:
               type: string
               format: binary
+          required:
+            - file
   responses:
     204:
       $ref: ../../../components/responses/204.yml
