@@ -2,4 +2,4 @@ description: Internal Server Error
 content:
   application/json:
     schema:
-      $ref: ../schemas/errors/500.json
+      $ref: https://softask-app.github.io/api-types/v1/types/error/500.json#

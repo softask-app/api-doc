@@ -2,4 +2,4 @@ description: Bad Request
 content:
   application/json:
     schema:
-      $ref: ../schemas/errors/400.json
+      $ref: https://softask-app.github.io/api-types/v1/types/error/400.json#

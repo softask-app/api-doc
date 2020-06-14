@@ -2,4 +2,4 @@ description: Rate Limited
 content:
   application/json:
     schema:
-      $ref: ../schemas/errors/429.json
+      $ref: https://softask-app.github.io/api-types/v1/types/error/429.json#

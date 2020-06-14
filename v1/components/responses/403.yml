@@ -2,4 +2,4 @@ description: Unauthorized
 content:
   application/json:
     schema:
-      $ref: ../schemas/errors/403.json
+      $ref: https://softask-app.github.io/api-types/v1/types/error/403.json#
