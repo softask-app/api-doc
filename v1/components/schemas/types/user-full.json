@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://softask-app.github.io/api-doc/v1/schemas/types/user-full.json",
+  "title": "Extended User Record",
+  "definitions": {
+    "userId": {
+      "title": "User ID",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "displayName": {
+      "title": "User Display Name",
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 64
+    },
+    "email": {
+      "title": "User Email Address",
+      "type": "string",
+      "format": "email"
+    }
+  },
+  "type": "object",
+  "properties": {
+    "id": {
+      "$ref": "#/definitions/userId"
+    },
+    "displayName": {
+      "$ref": "#/definitions/displayName"
+    },
+    "email": {
+      "$ref": "#/definitions/email"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id",
+    "displayName",
+    "email",
+    "created"
+  ],
+  "additionalProperties": false
+}
