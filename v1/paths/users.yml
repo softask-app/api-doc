@@ -15,7 +15,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/uri/users/by-id/get-res.json
+            $ref: https://softask-app.github.io/api-types/v1/types/user/full.json
     400:
       $ref: ../components/responses/400.yml
     429:

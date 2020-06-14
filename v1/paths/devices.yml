@@ -12,7 +12,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/uri/devices/get-res.json
+            title: Trusted Device List
+            type: array
+            items:
+              $ref: https://softask-app.github.io/api-types/v1/types/device/full.json#
     401:
       $ref: ../components/responses/401.yml
     429:
