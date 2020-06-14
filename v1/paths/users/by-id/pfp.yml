@@ -93,7 +93,7 @@ delete:
   summary: Delete User Profile Pic
   description: Removes a user's custom profile picture (if one existed).
   tags:
-    - User Managment
+    - User Management
   security:
     - ApiKeyAuth: []
   responses:
