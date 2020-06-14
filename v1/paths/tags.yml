@@ -25,6 +25,9 @@ get:
       { "id": 58953, "name": "hours" }
     ]
     ```
+
+    The results in the returned array will be sorted most to least frequently
+    used tags.
   parameters:
     - name: q
       in: query
@@ -35,7 +38,7 @@ get:
         minLength: 3
         maxLength: 32
       required: false
-      example: ?q=hous
+      example: hous
   responses:
     200:
       description: Success Response
