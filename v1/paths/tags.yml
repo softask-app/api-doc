@@ -1,0 +1,51 @@
+# path: /tags
+get:
+  operationId: findTags
+  summary: Task Tag Search
+  description: |
+    Returns a list of a subset of the most frequently used tags that match the
+    given filter `q`.
+
+    The `q` query parameter acts to enable a typeahead search, the given string
+    will be used as the prefix to search for in the tag store.  This query value
+    is not case sensitive.
+
+    If no filter value is given, the list will simply contain the most popular
+    tags.
+
+    If the query value of `q` is less than 3 characters, the query will be
+    ignored.
+
+    Example:
+
+    `?q=hou`
+    ```
+    [
+      { "id": 1258, "name": "House" },
+      { "id": 58953, "name": "hours" }
+    ]
+    ```
+  parameters:
+    - name: q
+      in: query
+      allowEmptyValue: false
+      description: Typeahead text (first 3+ characters of the tag name)
+      schema:
+        type: string
+        minLength: 3
+        maxLength: 32
+      required: false
+      example: ?q=hous
+  responses:
+    200:
+      description: Success Response
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: 'https://softask-app.github.io/api-types/v1/types/task/tag.json#'
+    429:
+      $ref: ../components/responses/429.yml
+    500:
+      $ref: ../components/responses/500.yml

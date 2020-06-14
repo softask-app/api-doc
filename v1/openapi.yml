@@ -51,6 +51,8 @@ paths:
   /users/{user-id}:     { $ref: paths/users/by-id.yml }
   /users/{user-id}/pfp: { $ref: paths/users/by-id/pfp.yml }
 
+  /tags: { $ref: paths/tags.yml }
+
 components:
   securitySchemes:
     ApiKeyAuth:
