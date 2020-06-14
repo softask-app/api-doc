@@ -88,3 +88,22 @@ put:
       $ref: ../../../components/responses/429.yml
     500:
       $ref: ../../../components/responses/500.yml
+delete:
+  operationId: deleteUserPfp
+  summary: Delete User Profile Pic
+  description: Removes a user's custom profile picture (if one existed).
+  tags:
+    - User Managment
+  security:
+    - ApiKeyAuth: []
+  responses:
+    204:
+      $ref: ../../../components/responses/204.yml
+    401:
+      $ref: ../../../components/responses/401.yml
+    404:
+      $ref: ../../../components/responses/404.yml
+    429:
+      $ref: ../../../components/responses/429.yml
+    500:
+      $ref: ../../../components/responses/500.yml
