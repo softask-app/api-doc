@@ -31,9 +31,6 @@ tags:
 paths:
   /: { $ref: paths/(empty).yml }
 
-  /types:           { $ref: paths/types.yml       }
-  /types/{type-id}: { $ref: paths/types/by-id.yml }
-
   /auth/login:  { $ref: paths/auth/login.yml  }
   /auth/logout: { $ref: paths/auth/logout.yml }
   /auth/auto:   { $ref: paths/auth/auto.yml   }
