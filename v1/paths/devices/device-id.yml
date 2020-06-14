@@ -1,10 +1,6 @@
-# path: devices/device-id
+# path: /devices/{device-id}
 parameters:
-  - name: device-id
-    in: path
-    required: true
-    schema:
-      $ref: ../../components/schemas/common/device-id.json
+  - $ref: ../../components/parameters/device-id.yml
 get:
   operationId: getDevice
   summary: Device Details
@@ -20,20 +16,19 @@ get:
           schema:
             $ref: ../../components/schemas/uri/devices/by-id/get-res.json
     401:
-      $ref: ../..//components/responses/401.yml
+      $ref: ../../components/responses/401.yml
     404:
-      $ref: ../..//components/responses/404.yml
+      $ref: ../../components/responses/404.yml
     429:
-      $ref: ../..//components/responses/429.yml
+      $ref: ../../components/responses/429.yml
     500:
-      $ref: ../..//components/responses/500.yml
+      $ref: ../../components/responses/500.yml
 patch:
   operationId: updateDevice
   summary: Update Device Info
-  # TODO: detail the device trust somewhere else... maybe even make that a
-  #       separate endpoint?
   description: |
-    Update user provided data for a device.
+    Update user provided data for a device using a
+    [JSON Patch](http://jsonpatch.com/) request.
 
     Fields that may be updated using this endpoint:
 
@@ -49,20 +44,16 @@ patch:
         schema:
           $ref: 'http://json.schemastore.org/json-patch#'
   responses:
-    200:
-      description: Success Response
-      content:
-        application/json:
-          schema:
-            $ref: ../../components/schemas/uri/auth/auto/post-res.json
+    204:
+      $ref: ../../components/responses/204.yml
     400:
-      $ref: ../..//components/responses/400.yml
+      $ref: ../../components/responses/400.yml
     401:
-      $ref: ../..//components/responses/401.yml
+      $ref: ../../components/responses/401.yml
     429:
-      $ref: ../..//components/responses/429.yml
+      $ref: ../../components/responses/429.yml
     500:
-      $ref: ../..//components/responses/500.yml
+      $ref: ../../components/responses/500.yml
 delete:
   operationId: deleteDevice
   summary: Remove Device Record
@@ -77,8 +68,8 @@ delete:
     - ApiKeyAuth: []
   responses:
     204:
-      $ref: ../..//components/responses/204.yml
+      $ref: ../../components/responses/204.yml
     404:
-      $ref: ../..//components/responses/404.yml
+      $ref: ../../components/responses/404.yml
     500:
-      $ref: ../..//components/responses/500.yml
+      $ref: ../../components/responses/500.yml

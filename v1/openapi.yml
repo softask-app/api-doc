@@ -13,7 +13,7 @@ info:
     url: https://raw.githubusercontent.com/softask-app/assets/master/logo-wtbg-short.png
 
 servers:
-  - url: https://softask.app/api/v1
+  - url: https://api.softask.app/rest/v1
 
 tags:
   - name: Authentication

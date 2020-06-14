@@ -1,10 +1,6 @@
 # path: /devices/{device-id}/trust
 parameters:
-  - name: device-id
-    in: path
-    required: true
-    schema:
-      $ref: ../../../components/schemas/common/device-id.json
+  - $ref: ../../../components/parameters/device-id.yml
 post:
   operationId: trustDevice
   summary: Trust A Device

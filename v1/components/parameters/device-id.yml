@@ -1,0 +1,5 @@
+name: device-id
+in: path
+required: true
+schema:
+  $ref: ../schemas/common/device-id.json

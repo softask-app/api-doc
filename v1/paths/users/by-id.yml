@@ -24,6 +24,20 @@ get:
 patch:
   operationId: updateUser
   summary: Update User
+  description: |
+    Update user profile details using a [JSON Patch](http://jsonpatch.com/)
+    request.
+
+    No fields are deletable or movable.
+
+    The following fields are modifiable:
+
+    * `displayName`
+    * `email`
+    * `password`
+
+    Attempting to modify any other field or use delete/move actions will result
+    in a 403 response.
   tags:
     - User Management
   security:
@@ -33,7 +47,14 @@ patch:
     content:
       application/json:
         schema:
-          $ref: 'http://json.schemastore.org/json-patch#'
+          $ref: http://json.schemastore.org/json-patch#
+        example:
+          - op: replace
+            path: /displayName
+            value: New Name
+          - op: replace
+            path: /email
+            value: newemail@site.com
   responses:
     204:
       $ref: ../../components/responses/204.yml
@@ -41,6 +62,8 @@ patch:
       $ref: ../../components/responses/400.yml
     401:
       $ref: ../../components/responses/401.yml
+    403:
+      $ref: ../../components/responses/403.yml
     404:
       $ref: ../../components/responses/404.yml
     429:
