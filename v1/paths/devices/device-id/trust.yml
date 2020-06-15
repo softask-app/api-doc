@@ -8,15 +8,15 @@ post:
     Mark the device with the given `{device-id}` as "trusted".
 
     On success this endpoint will return, in it's response body, a 64 digit
-    token that will be associated with the user and device hardware id.
-    Future logins can utilize this token in combination with the user id
-    and device hardware ID to auto-auth and create a session using the
-    `/auth/auto` endpoint.  This allows devices to authenticate behind the
-    scenes for a user without having to store the user's credentials.
+    token that will be associated with the user and device hardware id.  Future
+    logins can utilize this token in combination with the user id and device
+    hardware ID to auto-auth and create a session using the `/auth/auto`
+    endpoint.  This allows devices to authenticate behind the scenes for a user
+    without having to store the user's credentials.
 
-    Once the token is issued, it cannot be retrieved or viewed via the API.
-    A device that has made this call is expected to store that token locally
-    for future use.
+    Once the token is issued, it cannot be retrieved or viewed via the API.  A
+    device that has made this call is expected to store that token locally for
+    future use.
   tags:
     - Device Management
   responses:

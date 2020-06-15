@@ -8,14 +8,14 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/uri/users/post-req.json
+          $ref: https://softask-app.github.io/api-types/v1/types/user/new.json#
   responses:
     200:
       description: Success Response
       content:
         application/json:
           schema:
-            $ref: https://softask-app.github.io/api-types/v1/types/user/full.json
+            $ref: https://softask-app.github.io/api-types/v1/types/user/full.json#
     400:
       $ref: ../components/responses/400.yml
     429:

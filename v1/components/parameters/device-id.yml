@@ -2,4 +2,4 @@ name: device-id
 in: path
 required: true
 schema:
-  $ref: 'https://softask-app.github.io/api-types/v1/types/device/device-id.json#'
+  $ref: https://softask-app.github.io/api-types/v1/types/device/device-id.json#

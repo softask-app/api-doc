@@ -32,7 +32,13 @@ patch:
 
     Fields that may be updated using this endpoint:
 
-    * `nickname`
+    ## `deviceName`
+
+    * `replace`
+
+    The `deviceName` property may be updated to any value that conforms to the
+    specification for the field defined in
+    [the device JSON schema](https://softask-app.github.io/api-types/v1/types/device/full.json#).
   tags:
     - Device Management
   security:
