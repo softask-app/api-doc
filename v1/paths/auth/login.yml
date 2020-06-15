@@ -5,9 +5,9 @@ post:
   description: |
     Log a user in using their email address and password.
 
-    On success this endpoint will return an API key token which can be used
-    as the value of the X-Api-Key header to access resources requiring
-    a logged in user.
+    On success this endpoint will return an API key token which can be used as
+    the value of the X-Api-Key header to access resources requiring a logged in
+    user.
   tags:
     - Authentication
   requestBody:
@@ -15,7 +15,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../../components/schemas/uri/auth/login/post-req.json
+          $ref: https://softask-app.github.io/api-types/v1/types/auth/webapp-payload.json#
   responses:
     200:
       description: Success Response
