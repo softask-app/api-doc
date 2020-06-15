@@ -11,6 +11,10 @@ get:
   responses:
     200:
       description: Success Response
+      content:
+        application/json:
+          schema:
+            $ref: 'https://softask-app.github.io/api-types/v1/types/task/new.json#'
     401:
       $ref: ../../components/responses/401.yml
     404:
