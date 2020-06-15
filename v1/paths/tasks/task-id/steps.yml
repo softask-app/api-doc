@@ -11,6 +11,34 @@ get:
   responses:
     200:
       description: Success Response
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: 'https://softask-app.github.io/api-types/v1/types/task/step/short.json'
+    401:
+      $ref: ../../../components/responses/401.yml
+    404:
+      $ref: ../../../components/responses/404.yml
+    429:
+      $ref: ../../../components/responses/429.yml
+    500:
+      $ref: ../../../components/responses/500.yml
+post:
+  operationId: createStep
+  summary: Create Task Step
+  tags: [ Step Management ]
+  security: [ ApiKeyAuth: [] ]
+  responses:
+    200:
+      description: Success Response
+      content:
+        application/json:
+          schema:
+            $ref: 'https://softask-app.github.io/api-types/v1/types/task/step/full.json'
+    400:
+      $ref: ../../../components/responses/400.yml
     401:
       $ref: ../../../components/responses/401.yml
     404:

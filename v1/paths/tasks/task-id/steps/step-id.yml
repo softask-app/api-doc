@@ -11,6 +11,10 @@ get:
   responses:
     200:
       description: Success Response
+      content:
+        application/json:
+          schema:
+            $ref: 'https://softask-app.github.io/api-types/v1/types/task/step/full.json'
     401:
       $ref: ../../../../components/responses/401.yml
     404:
@@ -22,6 +26,36 @@ get:
 patch:
   operationId: updateStep
   summary: Update Step
+  description: |
+    Update user provided data for a step using a
+    [JSON Patch](http://jsonpatch.com/) request.
+
+    Fields that may be updated using this endpoint:
+
+    ## `/description`
+
+    * `replace`
+
+    The value of the `description` field may be updated via the `replace`
+    operation.  Values must conform to the specification for the `description`
+    field as defined in
+    [the step JSON schema](https://softask-app.github.io/api-types/v1/types/task/step/full.json).
+
+    ## `/position`
+
+    * `replace`
+
+    The value of the `position` field may be updated via the `replace`
+    operation.  Values must conform to the specification for the `position`
+    field as defined in
+    [the step JSON schema](https://softask-app.github.io/api-types/v1/types/task/step/full.json).
+
+    * Setting this value to a number greater than the total length of the step
+    list (`n`) will result in this value being set to `n` instead.
+    * Setting this value to a number within the list will result in the step
+    currently with that `position` and all following steps (up to the previous
+    value of `position`) to have their position values incremented to 'make
+    room' for the updated step ordering.
   tags:
     - Step Management
   security:
