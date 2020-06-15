@@ -22,7 +22,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../../components/schemas/uri/auth/login/post-res.json
+            $ref: https://softask-app.github.io/api-types/v1/types/auth/auth-body.json#
     400:
       $ref: ../../components/responses/400.yml
     401:
