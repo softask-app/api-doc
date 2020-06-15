@@ -30,7 +30,7 @@ get:
           schema:
             type: array
             items:
-              $ref: 'https://softask-app.github.io/api-types/v1/types/task/full.json#'
+              $ref: 'https://softask-app.github.io/api-types/v1/types/task/short.json#'
     401:
       $ref: ../components/responses/401.yml
     429:
