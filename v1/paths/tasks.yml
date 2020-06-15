@@ -38,6 +38,11 @@ post:
     - Task Management
   security:
     - ApiKeyAuth: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: 'https://softask-app.github.io/api-types/v1/types/task/new.json#'
   responses:
     200:
       description: Success Response
