@@ -16,7 +16,7 @@ get:
           schema:
             type: array
             items:
-              $ref: 'https://softask-app.github.io/api-types/v1/types/task/step/short.json'
+              $ref: https://softask-app.github.io/api-types/v1/types/task/step/short.json#
     401:
       $ref: ../../../components/responses/401.yml
     404:
@@ -36,7 +36,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: 'https://softask-app.github.io/api-types/v1/types/task/step/full.json'
+            $ref: https://softask-app.github.io/api-types/v1/types/task/step/full.json#
     400:
       $ref: ../../../components/responses/400.yml
     401:

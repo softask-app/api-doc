@@ -15,7 +15,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../../components/schemas/uri/auth/auto/post-req.json
+          $ref: https://softask-app.github.io/api-types/v1/types/auth/device-payload.json#
   responses:
     200:
       description: Success Response

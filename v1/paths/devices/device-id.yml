@@ -42,7 +42,7 @@ patch:
     content:
       application/json:
         schema:
-          $ref: 'http://json.schemastore.org/json-patch#'
+          $ref: http://json.schemastore.org/json-patch#
   responses:
     204:
       $ref: ../../components/responses/204.yml
