@@ -7,12 +7,17 @@ get:
       in: query
       required: false
       allowEmptyValue: false
+      description: Typeahead text (first 3+ characters of a task name)
       schema:
         type: string
         minLength: 3
   responses:
     200:
       description: Success Response
+      content:
+        application/json:
+          schema:
+            $ref: https://softask-app.github.io/api-types/v1/types/task/name-result.json#
     429:
       $ref: ../components/responses/429.yml
     500:
