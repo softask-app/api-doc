@@ -50,6 +50,7 @@ paths:
   /users/{user-id}/pfp: { $ref: paths/users/by-id/pfp.yml }
 
   /tags: { $ref: paths/tags.yml }
+  /task-names: { $ref: paths/task-names.yml }
 
 components:
   securitySchemes:

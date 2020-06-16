@@ -1,0 +1,19 @@
+# path: /task-names
+get:
+  operationId: findTaskNames
+  summary: Task Name Search
+  parameters:
+    - name: q
+      in: query
+      required: false
+      allowEmptyValue: false
+      schema:
+        type: string
+        minLength: 3
+  responses:
+    200:
+      description: Success Response
+    429:
+      $ref: ../components/responses/429.yml
+    500:
+      $ref: ../components/responses/500.yml
