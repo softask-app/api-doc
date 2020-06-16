@@ -34,6 +34,53 @@ paths:
   /auth/login:  { $ref: paths/auth/login.yml  }
   /auth/logout: { $ref: paths/auth/logout.yml }
   /auth/auto:   { $ref: paths/auth/auto.yml   }
+  /auth/pw-reset:
+    post:
+      operationId: pwResetRequest
+      summary: Request Password Reset
+      tags:
+        - Authentication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: https://softask-app.github.io/api-types/v1/types/auth/pw-reset-request.json#
+      responses:
+        204:
+          $ref: components/responses/204.yml
+        400:
+          $ref: components/responses/400.yml
+        401:
+          $ref: components/responses/401.yml
+        429:
+          $ref: components/responses/429.yml
+        500:
+          $ref: components/responses/500.yml
+  /auth/pw-reset/{token}:
+    post:
+      operationId: pwReset
+      summary: Password Reset
+      tags:
+        - Authentication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: https://softask-app.github.io/api-types/v1/types/auth/pw-reset.json#
+      responses:
+        204:
+          $ref: components/responses/204.yml
+        400:
+          $ref: components/responses/400.yml
+        401:
+          $ref: components/responses/401.yml
+        429:
+          $ref: components/responses/429.yml
+        500:
+          $ref: components/responses/500.yml
+
+
+
 
   /devices:                   { $ref: paths/devices.yml                 }
   /devices/{device-id}:       { $ref: paths/devices/device-id.yml       }
