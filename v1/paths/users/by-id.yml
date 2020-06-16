@@ -30,14 +30,21 @@ patch:
 
     No fields are deletable or movable.
 
-    The following fields are modifiable:
+    The fields below are modifiable.  Attempting to modify any other field or
+    use delete/move actions will result in a 403 response.
 
-    * `displayName`
-    * `email`
-    * `password`
+    ## `displayName`
 
-    Attempting to modify any other field or use delete/move actions will result
-    in a 403 response.
+    * `replace`
+
+    ## `email`
+
+    * `replace`
+
+    ## `password`
+
+    * `replace`
+
   tags:
     - User Management
   security:
