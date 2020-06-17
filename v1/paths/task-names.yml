@@ -2,6 +2,10 @@
 get:
   operationId: findTaskNames
   summary: Task Name Search
+  tags:
+    - Task Management
+  security:
+    - ApiKeyAuth: []
   parameters:
     - name: q
       in: query

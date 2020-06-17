@@ -28,6 +28,10 @@ get:
 
     The results in the returned array will be sorted most to least frequently
     used tags.
+  tags:
+    - Task Management
+  security:
+    - ApiKeyAuth: []
   parameters:
     - name: q
       in: query
