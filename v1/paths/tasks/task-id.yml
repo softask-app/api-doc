@@ -14,7 +14,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: https://softask-app.github.io/api-types/v1/types/task/new.json#
+            $ref: https://softask-app.github.io/api-types/v1/types/task/full.json#
     401:
       $ref: ../../components/responses/401.yml
     404:
